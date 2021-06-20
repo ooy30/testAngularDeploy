@@ -7,6 +7,7 @@ import {TestGetDataService} from './../../service/test-get-data.service'
 })
 export class TestComponent implements OnInit {
 
+  listdta:any
   constructor(private testGetDataService:TestGetDataService) { }
 
   ngOnInit(): void {
@@ -15,7 +16,7 @@ export class TestComponent implements OnInit {
       .subscribe(
         (res: any) => {
           console.log(res);
-          
+          this.listdta=res;
         }, (error) => {
           alert('error ' + error.status);
         }

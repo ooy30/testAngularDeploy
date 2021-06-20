@@ -4,7 +4,7 @@ import { TestComponent } from './panges/test/test.component';
 
 const routes: Routes = [
   {
-    path: 'test',
+    path: '',
     component: TestComponent,
   }
 
