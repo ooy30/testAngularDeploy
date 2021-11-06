@@ -1,0 +1,34 @@
+<h2 mat-dialog-title> {{data.header}}</h2>
+
+<form [formGroup]="formData" (ngSubmit)="onSubmitForm()">
+
+    <mat-dialog-content class="mat-typography">
+
+        <mat-form-field appearance="outline" style="margin-right: 1%;margin-left: 1%; width: 98%;">
+            <mat-label>Name <label style="color: red;">*</label></mat-label>
+            <input matInput formControlName="name">
+        </mat-form-field>
+        
+        <div class="p-grid" style="text-align: center;">
+            <div class="p-col">
+                <label [ngClass]="{'labelFile': !imagesProfile_show}" class="labelFileHover" for="fileInput"
+                    style="color: #ccc;margin-right: 1%;margin-left: 1%; width: 98%;">
+                    <img *ngIf="imagesProfile_show" class="classImg hoverLabel"
+                        [src]="imagesProfile_show ? imagesProfile_show : './assets/images/icon-img.jpg'">
+                    <p *ngIf="!imagesProfile_show" style="margin-top: 40px;">Choose Image</p>
+                </label>
+
+                <input #myInputImg id="fileInput" type="file" accept="image/*" style="display: contents;"
+                    (change)="uploadFileProfile($event)">
+            </div>
+        </div>
+
+
+
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close color="warn">Cancel</button>
+        <button mat-button cdkFocusInitial type="submit">Submit</button>
+    </mat-dialog-actions>
+
+</form>

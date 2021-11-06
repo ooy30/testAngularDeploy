@@ -1,2 +1,27 @@
-<button type="button" class="btn btn-outline-primary">Test Show List Data</button>
-<div *ngFor="let item of listdta">{{item.name}}</div>
+<div class="p-5">
+  <b style="font-size: 30px;">ผลไม้</b>
+  <div style="display: flex;height: 55px;justify-content: end;"> 
+     <mat-form-field appearance="outline" style="margin-right: 1%;margin-left: 1%; width: 300px;">
+      <mat-label>Search</mat-label>
+      <input (keyup)="searchData($event)" matInput>
+  </mat-form-field>
+    <button (click)="openDialog('เพิ่มผลไม้')" type="button" class="btn btn-outline-primary">เพิ่มผลไม้</button>
+  
+  </div>
+    
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ชื่อผลไม้</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of listdta" >
+        <td>{{item.name}}</td>
+        <td> <img class="classImg" [src]="item.image" alt=""> </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

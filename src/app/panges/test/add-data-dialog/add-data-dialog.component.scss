@@ -1,0 +1,27 @@
+.classImg {
+    overflow: hidden;
+    width:  98%;
+    height: 120px;
+    border: 2px solid #fff;
+    object-fit: cover;
+    margin-right: 1%;
+    margin-left: 1%;
+    margin-top: 5px;
+    margin-bottom: 15px;
+   
+}
+
+.labelFileHover:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.labelFile{
+    
+    border: dotted;
+    width: 440px;
+    height: 120px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
